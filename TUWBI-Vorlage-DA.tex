@@ -1,0 +1,107 @@
+%% LaTeX template for diploma thesis at the 
+%% department of civil engineering of TU Wien
+%% Following files have to be in the same directory:
+%% TUWBIDA.sty and tu-bi-2009.jpg
+%% 
+%% created by Christian Schranz and Sebastian Pech
+%% EDV-Zentrum Bauingenieurwesen
+%% date: 2016-10-14
+%% tested for pdflatex
+%%
+\documentclass[11pt,twoside=true]{scrreprt}
+%\documentclass[11pt,oneside]{scrreprt}
+%
+%% consider that the input encoding of all should be utf8 
+%% if you use the follwing setting, otherwise change it
+\usepackage[utf8]{inputenc}
+
+\usepackage{TUWBIDA}
+%% this style includes already some packages which have been very useful 
+%% in the last diploma or doctoral theses
+%%
+%% fontenc[T1], lmodern, microtype, babel[englisch,naustrian], graphicx, 
+%% geometry with all margins or areaset (choose what you like)
+%% mathtools, amssymb, nicefrac, siunitx[, as decimal marker], booktabs,
+%% url, xcolor[table], textcomp, marvosym, pifonts, pdfpages, ragged2e, 
+%% tabularx, longtable, csquotes, eurosym, eso-pic, enumitem, todonotes, 
+%% dcolumn, multirow, setspace, listings
+%% scrlayer-scrpage with header/footline
+
+\raggedbottom 
+%% prevents the expansion of the text till the end of the page (if you like)
+%\setcapindent{0em} %% influences captions layout
+
+%% ===== title information ==============
+%% The title page is designed in the style file TUWBIDA.sty
+%% Only the following information has to be provided
+%% Every diploma thesis has an english and a german title
+%%
+%% german title
+\titleGER{Leistungs- und Kostenermittlung im maschinellen Tunnelbau}
+%% english title
+\titleENG{The big river}
+%% author with correct academic titles, if necessary
+\author{\textbf{Theresa Prem}}
+%% provide the gender for correct title page: M...male, F...female
+\gender{F}
+%% student id (or Matrikelnummer)
+\MatrNr{1025020}
+%%
+%% supervising professor and assistents with correct titles 
+%% use \\[2ex] to separate them
+\supervisor{Univ.Prof. Dipl.-Ing. Dr.techn. \textbf{Gerald Goger}
+\\[2ex]
+Dipl.-Ing. \textbf{Melanie Piskernik}}
+%% supervising institute
+\institute{Institut für Baubetrieb und Bauwirtschaft -- Bereich Baubetrieb und Bauverfahrenstechnik\\
+Technische Universität Wien \\
+Karlsplatz 13/234-1, A-1040 Wien}
+%% date
+\date{Oktober 2016}
+
+%% use biblatex and biber for bibliography
+%% customize options as you like
+%% style=numeric-comp ... [1]
+%% style=authoryear ... Mang 1998 / use \textcite{} ... Mang (1998)
+%%
+\usepackage[style=numeric-comp,backend=biber,maxcitenames=1]{biblatex}
+\ExecuteBibliographyOptions{%
+  firstinits=true,maxbibnames=99}%
+\DefineBibliographyStrings{ngerman}{andothers={et\;al\adddot}}
+\addbibresource{Literatur.bib}
+
+
+%% ===== additional packages to the ones already loaded ==============
+
+%% ===== additional settings =============
+\setcounter{secnumdepth}{3}
+
+
+\begin{document}       %% start of the document
+\maketitle             %% places the title with above information
+
+\cleardoublepage
+\selectlanguage{naustrian}  %% for german abstract
+\include{00-Kurzfassung}      %% german abstract (about 1 page)
+
+\cleardoublepage
+\selectlanguage{english}    %% for english abstract
+\include{00-abstract}         %% english abstract (about 1 page)
+
+%\cleardoublepage
+\selectlanguage{naustrian} 
+\pagestyle{scrheadings} 
+
+\tableofcontents
+
+%% now include all chapter files -- use the include-command (takes care
+%% that all not yet output floats are output before the new file)
+%%
+%\include{01-introduction}
+%\include{02-Grundlagen}
+%etc.
+
+%% insert bibliography, adds chapter heading with chapter number
+%\printbibliography
+
+\end{document}
