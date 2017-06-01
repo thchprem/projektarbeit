@@ -22,7 +22,7 @@ captions=tableheading,numbers=noenddot}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{lmodern}
 \RequirePackage[babel]{microtype}     % verbessert das Schriftbild deutlich
-\RequirePackage[english,naustrian]{babel} %% englisch and austrian language
+\RequirePackage[english,ngerman,naustrian]{babel} %% englisch and austrian language
 
 %% lines at - siehe: http://www.komascript.de/chapterwithlines
 %\renewcommand{\chapterlineswithprefixformat}[3]{%
@@ -91,10 +91,10 @@ automark
 
 
 % Eigene Sprachabhängige Begriffe
-\renewcaptionname{ngerman,naustrian,nswissgerman}{\tablename}{Tab.}
-\renewcaptionname{ngerman,naustrian,nswissgerman}{\figurename}{Abb.}
-\renewcaptionname{ngerman,naustrian,nswissgerman}{\bibname}{Literaturverzeichnis}
-\renewcaptionname{ngerman,naustrian,nswissgerman}{\abstractname}{Kurzfassung}
+\renewcaptionname{ngerman}{\tablename}{Tab.}
+\renewcaptionname{ngerman}{\figurename}{Abb.}
+\renewcaptionname{ngerman}{\bibname}{Literaturverzeichnis}
+\renewcaptionname{ngerman}{\abstractname}{Kurzfassung}
 
 %% Typografische Einstellungen zu Gleitobjekten
 \renewcommand{\floatpagefraction}{0.6}
@@ -162,37 +162,11 @@ automark
 
 \begin{singlespace*}
 \begin{center}
-{\Large Diploma Thesis} \\[3ex]
-\textbf{{\LARGE \@titleENG
-}} 
-\\[4.5ex]
-{\large
-submitted in satisfaction of the requirements for the degree of
-\\[1ex]
-Diplom-Ingenieur
-\\[1ex]
-of the TU Wien, Faculty of Civil Engineering
-}
-\\[1.2ex]
-\rule{\linewidth}{0.2mm}
-\\[3ex]
 {\Large Projektarbeit} 
 \\[4.5ex]
 \textbf{{\LARGE \@titleGER}} 
 \\[4.5ex]
-{\large
-ausgeführt zum Zwecke der Erlangung des akademischen Grades 
-\if\@gender\male 
-eines 
-\\[1ex]
-Diplom-Ingenieurs 
-\else 
-einer
-\\[1ex]
-Diplom-Ingenieurin 
-\fi
-\\[1ex]
-eingereicht an der Technischen Universität Wien, Fakultät für Bauingenieurwesen
+{eingereicht an der Technischen Universität Wien, Fakultät für Bauingenieurwesen
 \\[3ex]
 von
 \\[3ex]

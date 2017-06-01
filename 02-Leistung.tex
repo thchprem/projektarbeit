@@ -1,0 +1,97 @@
+\chapter{Leistung}
+\label{leistung}
+Die Leistungsermittlung stellt eine wesentliche Basis für die weitere Kostenabschätzung eines bautechnischen Projektes dar. Besonders im Tunnelbau ist diese Abschätzung der Vortriebsleistung von großer Bedeutung. Die drei Haupteinflussfaktoren sind laut \parencite{thuro2011}:
+\begin{itemize}
+\item Gestein und Gebirge: geologisch und felsmechanische Parameter
+\item Maschinenparameter: TBM-Technik
+\item Baubetrieb: Logistik, Bedienung und Wartung
+\end{itemize}
+%...
+Die Umrechnung von Netto- auf Bruttovortriebsleistung wird über den sogenannten Ausnutzungsgrad gemacht.
+
+\section{Penetration}
+\label{penetration}
+Penetration beschreibt die Eindringtiefe der Bohrwerkzeuge je Umdrehung des Bohrkopfes. Die typische Einheit ist Millimeter pro Umdrehung [mm/U]. 
+Durch die Rotation und die gleichmäßige Andruckkraft (i.d.R. 200kN) werden die Rollenmeissel in konzentrischen Bahnen an die Ortsbrust gedrückt. lösen die sogenannten Chips ab.
+\\In den folgenden Punkten werden die gängisten Berechnungsmodelle aufgezeigt.
+\paragraph{Gesteinslösevorgang} 
+
+%Bild schema_ausbruch
+
+\subsection{Prognosemodell nach Gehring}
+\label{prognose_gehring}
+Dieses empirische Modell ist weitverbreitet aufgrund seiner unkomplizierten Anwendung. Eingang finden die einaxiale Druckfestigkeit und die Gefügeeigenschaften. Die Druckfestigkeit ist die einzig notwendige Laboruntersuchung. Falls diese nicht möglich ist, kann sie - gleich wie die Gefügeeigenschaften - von den Geologen abgeschätzt werden. Somit kann mit diesem Berechnungsmodell eine Penetration zu einem sehr frühen Zeitpunkt des Projekts gerechnet werden.\parencite{leitner2004}
+\
+Den Zerspaltungsvorgang beschreibt Gehring in 4 Phasen:
+\begin{enumerate}
+\item[] Eindringen der Schneidrolle und erzeugen der Zermalmungszone
+\item[] Bildung von Zugrissen aus der Zermalmungszone
+\item[] Spanbildung nach erreichen des überkritischen Bruchzustandes
+\item[] Lösen des Spans und Spannungsabbau
+\end{enumerate}
+
+Annahmen für die Eingangsparameter: Schneidbahnabstand s = 80mm, Diskendurchmesser 17Zoll (430mm), und die Andruckkraft je Diske von 200kN
+
+\begin{equation}
+\label{eg:gehring}
+p=4*F_{N}/\sigma_{d}*(k_{1}*k_{2}*...)
+\end{equation}
+mit
+\begin{description}[labelindent=1cm]
+\item[] p ... Penetration [mm/rev]
+\item[] $F_{N}$ ... mittlere Andruckkraft (200kN)
+\item[] $\sigma_{d}$ ... einaxiale Druckfestigkeit [N/$mm^{2}$]
+\item[] k ... Korrekturfaktor
+\end{description}
+
+%
+Die Berechnung der Korrekturfaktoren würde den Umfang dieser Arbeit überschreiten und somit kommt die vereinfachten Formel zum tragen. 
+\
+\begin{equation}
+\label{eg:gehringeinfach}
+P=4*200/\sigma_{d}
+\end{equation}
+
+\subsection{Penetrationsermittlung der NTNU Trondheim}
+\label{penetration_ntnu}
+In diesem empirischen Modell ist die einaxiale Druckfestigkeit in erster Linie kein wesentlicher Parameter. Es wurde für nordische Gesteine entwickelt und anschließend mit Standard-Gesteinsparametern verknüpft, um es für verschiedene Gesteine anwendbar zu machen. Somit ist es die meist angenommene empirische Methode in Europa um Prognosen zu erstellen.
+Die notwendigen Untersuchungen sind zum einen die Bohrbarkeit des Gesteins (liefert DRI) und zum anderen die Gefügeeigenschaften des Gebirges (Abschätzung der Trennflächenorientierung und -abstände). Weiters werden Maschinendaten berücksichtigt wie Form, Anordnung und Größe der Werkzeuge, sowie die Rollengeschwindigkeit, verfügbare Andruckkraft und Maschinendynamik.
+
+\paragraph{äquivalenter Gebirgsfaktor}
+\begin{equation}
+\label{eg:gebirgsfaktor}
+k_{ekv}=k_{s-tot}*k_{DRI}*k_{por}
+\end{equation}
+%Diagramme Abb. 39, 40
+
+\paragraph{äquivalente Andruckkraft}
+\begin{equation}
+\label{eg:andruckkraft}
+M_{ekv}=M_{B}*k_{d}*k_{a}
+\end{equation}
+
+\paragraph{Penetration}
+\begin{equation}
+\label{eg:penetration}
+i_{0}=(M_{ekv}/M_{1})^{b}
+\end{equation}
+%Abb. 43
+
+\subsection{Prognosemodell der Colorado School of Mines}
+\label{prognose_csm}
+Dieses Modell dient in erster Linie zur Effizienzoptimierung und ist sinnvoll in seiner Anwendung wenn es um die Optimierung des Bohrkopfdesigns geht. Eingangswerte sind das Bohrkopfprofil und die Gesteinseigenschaften.
+\paragraph{resultierende Schneidkraft}
+\begin{equation}
+F_{t}=P°*\Phi*R*T/(1+\Psi)
+\end{equation}
+
+\begin{equation}
+\Phi=\arccos((R-p)/R)
+\end{equation}
+
+\section{Werkzeugverbrauch}
+\label{werkzeugverbrauch}
+
+
+\section{Baubetriebliche Modellierung}
+\label{baubetr_modell}
